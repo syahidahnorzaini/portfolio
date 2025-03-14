@@ -3,83 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favourite Playlist</title>
+    <title>About Me</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #ffe5ec;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            background-image: url('BACKGROUND ABOUT.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe5ec;
+            text-align: center;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(45deg,rgb(255, 77, 175),rgb(150, 130, 135));
+            color: white;
+            padding: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .header-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #ff4d6d, #ff85a2);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 10px rgba(255, 77, 109, 0.4);
+        }
+
+        .header-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.6);
+        }
+
+        /* NAVIGATION */
+        nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg,rgb(255, 77, 166), #ff85a2);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 10px rgba(255, 77, 109, 0.4);
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.6);
+        }
+
+        /* ABOUT SECTION */
+        .about-container {
+            margin: 40px auto;
+            width: 80%;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-container h2 {
+            font-size: 28px;
+            color: #ff4d6d;
+            margin-bottom: 10px;
+        }
+
+        .about-container p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 10px;
+            border: 5px solid #ff85a2;
+        }
+
+        .about-text {
+            font-size: 18px;
+            color: black;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
         .song-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 15px auto;
-            width: 300px;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 10px;
-            background: #fff;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-        .song-item:hover {
-            transform: scale(1.05);
+            margin-bottom: 20px;
         }
         .song-item img {
             width: 60px;
             height: 60px;
             margin-right: 15px;
-            border-radius: 10px;
+            cursor: pointer;
+        }
+        .song-item span {
+            font-size: 18px;
+        }
+        .controls {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <h3>🎵 Favourite Playlist</h3>
-    <audio id="audioPlayer" controls>
-        <source src="" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <p id="songName" style="font-weight: bold; font-size: 18px; margin-top: 10px;">Select a song</p>
+    <header>
+        <div class="logo">MY FAVOURITE</div>
+        <button class="header-btn" onclick="location.href='Contact Me.HTML'">Contact Me</button>
+        </div>
+    </header>
 
-    <div class="song-item" onclick="playSong(0)">
-        <img src="DRUNK-TEXT.jpg" alt="Drunk Text">
-        <span>DRUNK TEXT</span>
-    </div>
+    <nav>
+        <button class="nav-btn" onclick="location.href='home.html'">Home</button>
+        <button class="nav-btn" onclick="location.href='about.html'">About</button>
+        <button class="nav-btn" onclick="location.href='gallery.html'">Gallery</button>
+        <button class="nav-btn" onclick="location.href='favourite.html'">Favourite</button>
+        <button class="nav-btn" onclick="location.href='webpage.html'">Webpage</button>
+    </nav>
 
-    <div class="song-item" onclick="playSong(1)">
-        <img src="PERAYAAN-MATI-RASA.jpg" alt="Perayaan Mati Rasa">
-        <span>PERAYAAN MATI RASA</span>
-    </div>
+    <div class="about-container">
+        <h3>🎵Favourite Playlist</h3>
+        <audio id="audioPlayer" controls>
+            <source src="L1-HenryMoodie  - drunk text (Lyrics).mp3">
+            Your browser does not support the audio element.
+        </audio>
 
-    <div class="song-item" onclick="playSong(2)">
-        <img src="MIRRORS.jpg" alt="Mirrors">
-        <span>MIRRORS</span>
-    </div>
+        <div class="controls">
+            <button onclick="playAudio()">PLAY</button>
+            <button onclick="pauseAudio()">PAUSE</button>
+        </div>
 
-    <script>
-        // Senarai lagu
-        var songs = [
-            { src: 'L1-HenryMoodie-drunk-text.mp3', name: 'DRUNK TEXT' },
-            { src: 'L2-Perayaan-Mati-Rasa.mp3', name: 'PERAYAAN MATI RASA' },
-            { src: 'justin-timberlake-mirrors.mp3', name: 'MIRRORS' }
-        ];
+        <div class="song-item" onclick="playSong('L1-HenryMoodie  - drunk text (Lyrics).mp3')">
+            <img src="DRUNK TEXT.jpg" alt="Lagu 1" />
+            <span>DRUNK TEXT</span>
+        </div>
 
-        // Fungsi untuk memainkan lagu yang dipilih
-        function playSong(index) {
+        <div class="song-item" onclick="playSong('L2-Perayaan Mati Rasa - Umay Shahab ft Natania Karin  Lirik Lagu.mp3')">
+            <img src="PERAYAAN MATI RASA.jpg" alt="Lagu 2" />
+            <span>PERAYAAN MATI RASA</span>
+        </div>
+
+        <div class="song-item" onclick="playSong('justin-timbrlake-mirrors-lyrics-128-ytshorts.savetube.me.mp3')">
+            <img src="download.png" alt="Lagu 3" />
+            <span>MIRRORS</span>
+        </div>
+
+
+        <script>
+            var currentSongIndex = 0;
+            var songs = [
+                { src: 'L1-HenryMoodie  - drunk text (Lyrics).mp3', name: 'Lagu 1 - DRUNK TEXT' , img: 'DRUNK TEXT.jpg' },
+                { src: 'L2-Perayaan Mati Rasa - Umay Shahab ft Natania Karin  Lirik Lagu.mp3', name: 'Lagu 2 - PERAYAAN MATI RASA', img: 'PERAYAAN MATI RASA.jpg' }
+                { src: 'justin-timbrlake-mirrors-lyrics-128-ytshorts.savetube.me.mp3', name: 'Lagu 3 - MIRRORS', img: 'download.png' } 
+            ];
+    
+            // Fungsi untuk menukar lagu
+        function playSong(songSrc, songName, songImage) {
             var audioPlayer = document.getElementById('audioPlayer');
             var songTitle = document.getElementById('songName');
 
             // Tukar sumber lagu dan mainkan
-            audioPlayer.src = songs[index].src;
+            audioPlayer.src = songSrc;
             audioPlayer.play();
 
-            // Tukar nama lagu
-            songTitle.textContent = songs[index].name;
+            // Kemaskini nama lagu
+            songTitle.textContent = songName;
+        }
+
+        // Fungsi untuk Play
+        function playAudio() {
+            var audioPlayer = document.getElementById('audioPlayer');
+            audioPlayer.play();
+        }
+
+        // Fungsi untuk Pause
+        function pauseAudio() {
+            var audioPlayer = document.getElementById('audioPlayer');
+            audioPlayer.pause();
+        }
+
+        // Fungsi untuk Next song
+        function nextSong() {
+            console.log('Next button clicked');  // Debugging: check if the button is clicked
+            currentSongIndex++;
+            if (currentSongIndex >= songs.length) {
+                currentSongIndex = 0; // Kembali ke lagu pertama jika sudah di penghujung
+            }
+
+            var song = songs[currentSongIndex];
+            console.log('Playing next song:', song.name);  // Debugging: check which song is being played
+            playSong(song.src, song.name, song.img);
         }
     </script>
 
+    
 </body>
 </html>
  
