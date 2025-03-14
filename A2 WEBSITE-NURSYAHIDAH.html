@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYIDAH'S WEBSITE</title>
+
+    <style>
+        /* Latar Belakang */
+        body {
+            background-image: url('IMAGES/BACKGROUND HOME.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        /* Teks Poster */
+        .poster-text {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 60px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: rgb(255, 255, 255);
+            -webkit-text-stroke: 3px black; /* Outline hitam */
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            animation: wave 1s infinite alternate ease-in-out;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Gradient Warna dalam Teks */
+        .gradient-text {
+            font-size: 70px;
+            font-weight: bold;
+            background: linear-gradient(to right, #ff4d6d, #ff9a9e);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* Teks Bergerak dari Kiri ke Kanan */
+        @keyframes slideText {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(0); }
+        }
+
+        /* Animasi Teks Berombak */
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .wave-text {
+            font-size: 60px;
+            font-weight: bold;
+            color: #ff4d6d;
+            display: inline-block;
+            animation: wave 1s infinite alternate ease-in-out;
+        }
+
+        h1 {
+            font-family: Arial, sans-serif;
+            color: #ff4d6d;
+            margin-bottom: 30px;
+        }
+
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            position: relative;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            background: linear-gradient(45deg, #ff4d6d, #ff85a2);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.6);
+        }
+
+        .nav-btn::after {
+            content: "";
+            position: absolute;
+            width: 300%;
+            height: 300%;
+            top: 50%;
+            left: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease-out;
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+        }
+
+        .nav-btn:active::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0;
+            transition: 0s;
+        }
+
+        .start-btn {
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #ff4d6d, #ff85a2);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+        }
+
+        .start-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.6);
+        }
+
+        .start-btn:active {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>🌸WELCOME🌸</h1>
+    </header>
+
+    <!-- Teks Poster -->
+    <div class="poster-text">SYIDAH'S WEBSITE</div>
+        
+    <div class="nav-container">
+        <button class="start-btn" onclick="location.href='home.html'">START</button>      
+    </div>
+</body>
+</html>

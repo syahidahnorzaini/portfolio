@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('IMAGES/BACKGROUND ABOUT.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe5ec;
+            text-align: center;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(45deg,rgb(255, 77, 175),rgb(150, 130, 135));
+            color: white;
+            padding: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .header-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #ff4d6d, #ff85a2);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 10px rgba(255, 77, 109, 0.4);
+        }
+
+        .header-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.6);
+        }
+
+        /* NAVIGATION */
+        nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg,rgb(255, 77, 166), #ff85a2);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 10px rgba(255, 77, 109, 0.4);
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.6);
+        }
+
+        /* ABOUT SECTION */
+        .about-container {
+            margin: 40px auto;
+            width: 80%;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-container h2 {
+            font-size: 28px;
+            color: #ff4d6d;
+            margin-bottom: 10px;
+        }
+
+        .about-container p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 10px;
+            border: 5px solid #ff85a2;
+        }
+
+        .about-text {
+            font-size: 18px;
+            color: black;
+            line-height: 1.6;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ABOUT ME</div>
+        <button class="header-btn" onclick="location.href='Contact Me.HTML'">Contact Me</button>
+        </div>
+    </header>
+
+    <nav>
+        <button class="nav-btn" onclick="location.href='home.html'">Home</button>
+        <button class="nav-btn" onclick="location.href='about.html'">About</button>
+        <button class="nav-btn" onclick="location.href='gallery.html'">Gallery</button>
+        <button class="nav-btn" onclick="location.href='favourite.html'">Favourite</button>
+        <button class="nav-btn" onclick="location.href='webpage.html'">Webpage</button>
+    </nav>
+
+    <div class="about-container">
+        <img src="IMAGES/PROFILE IMAGE ABOUT.PNG" alt="Profile Picture" class="profile-img">
+        <h2>Hi, I'm Nursyahidah Syuhadah!</h2>
+        <h2>🌸20 years old🌸</h2>
+
+        <p class="about-text">
+            Hye I born on <strong>March 5, 2005</strong>. 
+            I'm the second child out of five siblings and currently pursuing my studies at <strong>Unitar College Kuantan</strong> as a <strong>6th-semester student.</strong>
+            I am an <strong>E-Business</strong> student who likes to be related to IT and is interested in learning coding, designing and learning new technologies.
+            I have a passion for <strong>creativity and web development</strong>, where I get to explore both <strong>technology and design</strong>. 
+            Learning build websites allows me to enchance my skills and express my Creativity in a digital form.
+            My dream is to become a <strong>Teacher</strong>, but at the same time, I aspire to be a <strong>Web Developer</strong>. 
+            I belive that <strong>Technology and Education</strong> can go hand in hand to create impactful solutions for society.
+            In my free time, I love <strong>Listening to music</strong>, which helps me relax and find inspiration.
+            To know more about me, feel free to explore the navigation webpage above!👀
+        </P>
+    </div>
+
+</body>
+</html>
