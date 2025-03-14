@@ -23,7 +23,7 @@
 
         /* HEADER */
         header {
-            background: linear-gradient(45deg,rgb(255, 77, 175),rgb(150, 130, 135));
+            background: linear-gradient(45deg, rgb(255, 77, 175), rgb(150, 130, 135));
             color: white;
             padding: 20px;
             font-size: 30px;
@@ -40,7 +40,7 @@
             font-weight: bold;
         }
 
-        .header-btn {
+        .header-btn, .nav-btn {
             padding: 10px 20px;
             font-size: 16px;
             font-weight: bold;
@@ -53,12 +53,11 @@
             box-shadow: 0 5px 10px rgba(255, 77, 109, 0.4);
         }
 
-        .header-btn:hover {
+        .header-btn:hover, .nav-btn:hover {
             transform: scale(1.1);
             box-shadow: 0 10px 20px rgba(255, 77, 109, 0.6);
         }
 
-        /* NAVIGATION */
         nav {
             margin-top: 20px;
             display: flex;
@@ -66,25 +65,6 @@
             gap: 15px;
         }
 
-        .nav-btn {
-            padding: 12px 25px;
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-            background: linear-gradient(45deg,rgb(255, 77, 166), #ff85a2);
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 5px 10px rgba(255, 77, 109, 0.4);
-        }
-
-        .nav-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.6);
-        }
-
-        /* ABOUT SECTION */
         .about-container {
             margin: 40px auto;
             width: 80%;
@@ -94,48 +74,26 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .about-container h2 {
+        .about-container h3 {
             font-size: 28px;
             color: #ff4d6d;
             margin-bottom: 10px;
         }
 
-        .about-container p {
-            font-size: 18px;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-top: 10px;
-            border: 5px solid #ff85a2;
-        }
-
-        .about-text {
-            font-size: 18px;
-            color: black;
-            line-height: 1.6;
-            text-align: justify;
-        }
-
         .song-item {
             display: flex;
             align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
+            cursor: pointer;
         }
+
         .song-item img {
             width: 60px;
             height: 60px;
             margin-right: 15px;
-            cursor: pointer;
         }
-        .song-item span {
-            font-size: 18px;
-        }
+
         .controls {
             margin-top: 20px;
         }
@@ -145,8 +103,7 @@
 
     <header>
         <div class="logo">MY FAVOURITE</div>
-        <button class="header-btn" onclick="location.href='Contact Me.HTML'">Contact Me</button>
-        </div>
+        <button class="header-btn" onclick="location.href='contact.html'">Contact Me</button>
     </header>
 
     <nav>
@@ -160,78 +117,67 @@
     <div class="about-container">
         <h3>🎵Favourite Playlist</h3>
         <audio id="audioPlayer" controls>
-            <source src="L1-HenryMoodie  - drunk text (Lyrics).mp3">
+            <source src="L1-HenryMoodie-drunk-text.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
+        <p id="songName" style="font-weight: bold; font-size: 18px; margin-top: 10px;">DRUNK TEXT</p>
 
         <div class="controls">
             <button onclick="playAudio()">PLAY</button>
             <button onclick="pauseAudio()">PAUSE</button>
+            <button onclick="nextSong()">NEXT</button>
         </div>
 
-        <div class="song-item" onclick="playSong('L1-HenryMoodie  - drunk text (Lyrics).mp3')">
-            <img src="DRUNK TEXT.jpg" alt="Lagu 1" />
+        <div class="song-item" onclick="playSong(0)">
+            <img src="DRUNK-TEXT.jpg" alt="Drunk Text">
             <span>DRUNK TEXT</span>
         </div>
 
-        <div class="song-item" onclick="playSong('L2-Perayaan Mati Rasa - Umay Shahab ft Natania Karin  Lirik Lagu.mp3')">
-            <img src="PERAYAAN MATI RASA.jpg" alt="Lagu 2" />
+        <div class="song-item" onclick="playSong(1)">
+            <img src="PERAYAAN-MATI-RASA.jpg" alt="Perayaan Mati Rasa">
             <span>PERAYAAN MATI RASA</span>
         </div>
 
-        <div class="song-item" onclick="playSong('justin-timbrlake-mirrors-lyrics-128-ytshorts.savetube.me.mp3')">
-            <img src="download.png" alt="Lagu 3" />
+        <div class="song-item" onclick="playSong(2)">
+            <img src="MIRRORS.jpg" alt="Mirrors">
             <span>MIRRORS</span>
         </div>
+    </div>
 
+    <script>
+        var currentSongIndex = 0;
+        var songs = [
+            { src: 'L1-HenryMoodie-drunk-text.mp3', name: 'DRUNK TEXT' },
+            { src: 'L2-Perayaan-Mati-Rasa.mp3', name: 'PERAYAAN MATI RASA' },
+            { src: 'justin-timberlake-mirrors.mp3', name: 'MIRRORS' }
+        ];
 
-        <script>
-            var currentSongIndex = 0;
-            var songs = [
-                { src: 'L1-HenryMoodie  - drunk text (Lyrics).mp3', name: 'Lagu 1 - DRUNK TEXT' , img: 'DRUNK TEXT.jpg' },
-                { src: 'L2-Perayaan Mati Rasa - Umay Shahab ft Natania Karin  Lirik Lagu.mp3', name: 'Lagu 2 - PERAYAAN MATI RASA', img: 'PERAYAAN MATI RASA.jpg' }
-                { src: 'justin-timbrlake-mirrors-lyrics-128-ytshorts.savetube.me.mp3', name: 'Lagu 3 - MIRRORS', img: 'download.png' } 
-            ];
-    
-            // Fungsi untuk menukar lagu
-        function playSong(songSrc, songName, songImage) {
+        function playSong(index) {
             var audioPlayer = document.getElementById('audioPlayer');
             var songTitle = document.getElementById('songName');
+            currentSongIndex = index;
 
-            // Tukar sumber lagu dan mainkan
-            audioPlayer.src = songSrc;
+            audioPlayer.src = songs[index].src;
             audioPlayer.play();
-
-            // Kemaskini nama lagu
-            songTitle.textContent = songName;
+            songTitle.textContent = songs[index].name;
         }
 
-        // Fungsi untuk Play
         function playAudio() {
-            var audioPlayer = document.getElementById('audioPlayer');
-            audioPlayer.play();
+            document.getElementById('audioPlayer').play();
         }
 
-        // Fungsi untuk Pause
         function pauseAudio() {
-            var audioPlayer = document.getElementById('audioPlayer');
-            audioPlayer.pause();
+            document.getElementById('audioPlayer').pause();
         }
 
-        // Fungsi untuk Next song
         function nextSong() {
-            console.log('Next button clicked');  // Debugging: check if the button is clicked
             currentSongIndex++;
             if (currentSongIndex >= songs.length) {
-                currentSongIndex = 0; // Kembali ke lagu pertama jika sudah di penghujung
+                currentSongIndex = 0;
             }
-
-            var song = songs[currentSongIndex];
-            console.log('Playing next song:', song.name);  // Debugging: check which song is being played
-            playSong(song.src, song.name, song.img);
+            playSong(currentSongIndex);
         }
     </script>
-
-    
 </body>
-</html>  
+</html>
+ 
